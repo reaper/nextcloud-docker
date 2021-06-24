@@ -9,4 +9,8 @@ RUN wget -q https://downloads.plex.tv/plex-keys/PlexSign.key -O - | apt-key add 
 RUN apt-get update
 RUN yes | apt-get install -y plexmediaserver
 
+RUN echo "deb https://downloads.plex.tv/repo/deb/ public main" >> /etc/apt/sources.list.d/plexmediaserver.list
+RUN apt-get update
+RUN apt-get install -y plexmediaserver
+
 ENTRYPOINT ["service plexmediaserver start && /entrypoint.sh"]
