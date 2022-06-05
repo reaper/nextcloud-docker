@@ -31,7 +31,6 @@ jobs:
         with:
           pull: true
           push: true
-          no-cache: true
           tags: r3aper/nextcloud:latest
       -
         name: Image digest
